@@ -2,9 +2,10 @@ import qrcode as qr
 import subprocess
 import cv2
 
-sn = str(subprocess.call(['sudo', 'dmidecode', '-s', 'system-serial-number' ]))
-print (sn)
-image = qr.make(sn)
+#sn = str(subprocess.call(['sudo', 'dmidecode', '-s', 'system-serial-number' ]))
+sn = subprocess.run(['sudo', 'dmidecode', '-s', 'system-serial-number' ],capture_output=True,text=True)
+print (sn.stdout)
+image = qr.make(sn.stdout)
 type(image)  # qrcode.image.pil.PilImage
 image.save("serial_number_qrcode.png")
 

@@ -1,10 +1,13 @@
 import os, sys
 import subprocess
+import unittest
 
 var = str(subprocess.call(['sudo', 'dmidecode', '-s', 'system-serial-number' ]))
-print (var)
+#print (var)
+#print(type(var))
 
-
+sn = subprocess.run(['sudo', 'dmidecode', '-s', 'system-serial-number' ],capture_output=True,text=True)
+print(sn.stdout)
 
 
 """
