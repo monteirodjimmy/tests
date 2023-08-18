@@ -1,0 +1,10 @@
+#qr_image{
+    text-align: center;
+    position: relative;
+    background-color: purple;
+}
+#logo{
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+}
